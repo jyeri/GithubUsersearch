@@ -1,14 +1,14 @@
 import './App.css'
 import { TitleBar } from './components/TitleBar/TitleBar'
-import { userSearch } from './components/UserSearch/userSearch'
+import { UserSearch } from './components/UserSearch/userSearchApp'
 
 function App() {
 
 
   return (
     <>
-        <TitleBar />
-        <userSearch />
+      <TitleBar />
+      <UserSearch />
     </>
   )
 }
