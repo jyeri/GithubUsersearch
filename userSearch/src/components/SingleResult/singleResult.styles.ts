@@ -4,7 +4,7 @@ export const ResultContainer = styled.div`
     display: flex;
     width: 50%;
     position: relative;
-    margin-top: 200px; // Increase this value if needed
+    margin-top: 200px;
     padding: 15px;
     margin: auto;
     gap: 20px;
@@ -12,8 +12,6 @@ export const ResultContainer = styled.div`
 
 export const StyledLink = styled.a`
     display: flex;
-    width: 100%;
-    height: 100%;
     flex-direction: row;
     align-items: center;
     text-decoration: none; // Optional: remove underline from link

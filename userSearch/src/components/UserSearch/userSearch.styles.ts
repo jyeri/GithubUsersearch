@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const SearchContainer = styled.div`
     position: relative;
     margin: auto;
-    border: 1px solid black;
     width: 20em;
     height: 5em;
     &:hover {
@@ -105,15 +104,18 @@ export const SearchBar = styled.input`
 
 export const ResultContainer = styled.div`
   position: relative;
+  border: 1px solid crimson;
+  margin: auto;
   top: 50px;
+  width: 75%;
   padding: 2px;
   overflow-y: scroll;
-  max-height: 50vh;
-  border: 1px solid black;
     `;
 
 export const ParentContainer = styled.div`
     padding: 2px;
+    position: relative;
+    width: 100%;
     margin-top: 50px; // Adjust this value as needed
 `;
 

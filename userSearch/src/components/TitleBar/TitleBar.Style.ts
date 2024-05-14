@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Title__Container = styled.div`
-    margin: 0;
+    margin: auto;
     position: relative;
     margin-top: 2em;
-    width: 100%;
+    width: 85%;
     display: flex;
     justify-content: center;
 `;
@@ -12,7 +12,7 @@ export const Title__Container = styled.div`
 export const Title__Text = styled.h1`
     background: crimson;
     position: relative;
-    font-size: 4em;
+    font-size: 3em;
     font-family: "Jersey 10", sans-serif;
     font-weight: 200;
     font-style: normal;
