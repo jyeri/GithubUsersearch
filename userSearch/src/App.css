@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  max-height: 100vh;
   box-sizing: border-box;
   font-family: "Madimi One", sans-serif;
   font-weight: bold;
@@ -8,13 +9,13 @@
  
 }
 html, body {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
   display: table;
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vh;
   background-color: #4d4d4d;
   position: relative;
   font-family: sans-serif;

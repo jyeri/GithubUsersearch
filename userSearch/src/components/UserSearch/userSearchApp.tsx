@@ -1,6 +1,6 @@
-import { SearchContainer, ResultContainer, SearchBar } from './userSearch.styles';
+import { SearchContainer, SearchBar, ParentContainer } from './userSearch.styles';
 import { useUserSearch } from './useUserSearch';
-//import { SearchResult } from '../SearchResult/SearchResultApp';
+import { SearchResult } from '../SearchResult/SearchResultApp';
 
 
 
@@ -9,9 +9,12 @@ export const UserSearch = () => {
 
     return(
     <>
-        <SearchContainer>
-            <SearchBar value={query} onChange={handleInputChange} placeholder='Try searching for Jyeri'/>
-        </SearchContainer>
-    </>
+        <ParentContainer>
+            <SearchContainer>
+                <SearchBar value={query} onChange={handleInputChange} placeholder='Try searching for Jyeri'/>
+            </SearchContainer>
+            <SearchResult UserData={UserData} />
+        </ParentContainer>
+    </> 
     );
 };

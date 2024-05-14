@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Title__Container = styled.div`
     margin: 0;
-    position: absolute;
-    margin-top: 50px;
+    position: relative;
+    margin-top: 2em;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@ export const Title__Text = styled.h1`
     font-weight: 200;
     font-style: normal;
     color: white;
-    padding: 20px 50px;
+    padding: 0.2em 0.5em;
     border-radius: 30px;
     box-shadow: 0 0 25px 0 crimson,
                 0 20px 25px 0 rgba(0, 0, 0, 0.2);

@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 
 export const SearchContainer = styled.div`
-    position: absolute;
+    position: relative;
     margin: auto;
-    margin-top: 175px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 300px;
-    height: 100px;
+    border: 1px solid black;
+    width: 20em;
+    height: 5em;
     &:hover {
         cursor: pointer;
       }
@@ -108,5 +104,16 @@ export const SearchBar = styled.input`
 
 
 export const ResultContainer = styled.div`
-    padding: 8px;
+  position: relative;
+  top: 50px;
+  padding: 2px;
+  overflow-y: scroll;
+  max-height: 50vh;
+  border: 1px solid black;
     `;
+
+export const ParentContainer = styled.div`
+    padding: 2px;
+    margin-top: 50px; // Adjust this value as needed
+`;
+
