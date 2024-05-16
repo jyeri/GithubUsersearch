@@ -1,6 +1,6 @@
-import './App.css'
 import { TitleBar } from './components/TitleBar/TitleBar'
 import { UserSearch } from './components/UserSearch/UserSearchApp'
+import './App.css'
 
 function App() {
   // Using a fragment <> allows grouping of children without adding extra nodes to the DOM

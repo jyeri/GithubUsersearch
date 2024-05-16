@@ -6,9 +6,9 @@ export const SingleResult = ({ targetUser }: { targetUser: TargetUser }) => {
     const { beforeMatch, matchedText, afterMatch } = useSingleResult({ targetUser });
     return(
         <ResultContainer>
-          <StyledLink href={targetUser.html_url}>
+          <StyledLink href={targetUser.html_url} target="_blank" rel="noopener noreferrer">
           <ImgDiv>
-            <img src={targetUser.avatar_url} alt='User Avatar'/>
+            <img src={targetUser.avatar_url} alt={`${targetUser.login}'s avatar`}/>
           </ImgDiv>
           <UserLogin>
             <h1>

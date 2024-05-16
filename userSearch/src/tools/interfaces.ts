@@ -5,14 +5,14 @@ export interface   User {  // Define the User interface
     html_url:string;
 }
 
-export type TargetUser = User;
+export type TargetUser = User; // Define the TargetUser type
 
-export type ErrorData = {
+export type ErrorData = { // Define the ErrorData type
     happened: boolean | false;
     errormsg: string | null;
-} // Define the details interface
+}
 
-export interface   SearchResultProps {  // Define the User interface
-    UserData: User[] | null; // User data
-    Visible: boolean; // User data visibility
+export interface   SearchResultProps {  // Define the SearchResultProps interface
+    UserData: User[] | null;
+    Visible: boolean; 
 }

@@ -7,7 +7,7 @@ export const UseDebounce = (value:string, delay:number): string => {
 
     useEffect( () => {
         // Immediate update for empty values to ensure user sees immediate feedback
-        if(value == ""){
+        if(value === ""){
             setDebauncedValue(value);
             return;
         }

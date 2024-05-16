@@ -10,7 +10,7 @@ export const FetchUsers = async (url: string) => {
     // Customize error message based on response status for better user experience
     switch(response.status) {
       case 403:
-        errorMessage = 'Time Limit Exceeded';
+        errorMessage = 'API Rate Limit Exceeded';
         break;
       case 404:
         errorMessage = 'Not Found';

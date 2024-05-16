@@ -5,10 +5,12 @@ export const ErrorMessage = styled.div`
     display: flex;
     font-size: 3em;
     margin-top: 2em;
-    flex-direction: column; // Add this line to stack the items vertically
-    align-items: center; // Add this line to center the items
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
 
         h1 {
+            margin: 0.5em;
             position: relative;
             font-size: 0.5em;
             font-family: "Jersey 10", sans-serif;
@@ -23,5 +25,25 @@ export const ErrorMessage = styled.div`
             transition: all 0.5s;
             color: darkred;
         }
+    }
+`;
+
+export const RetryButton = styled.button`
+    position: relative;
+    margin-top: 1em;
+    padding: 0.3em 0.5em;
+    font-size: 0.5em;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: darkred;
+    border-radius: 10px;
+    transition: all 0.5s;
+    animation: 1s ease-in-out 0s infinite alternate none running blink;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all 0.5s;
+        color: green;
     }
 `;

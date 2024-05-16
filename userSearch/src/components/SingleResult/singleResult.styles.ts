@@ -8,6 +8,13 @@ export const ResultContainer = styled.div`
     padding: 15px;
     margin: auto;
     gap: 20px;
+    @media (max-width: 768px) {
+        scale: 0.9;
+      }
+  
+      @media (max-width: 480px) {
+        scale: 0.75;
+      }
 `;
 
 export const StyledLink = styled.a`

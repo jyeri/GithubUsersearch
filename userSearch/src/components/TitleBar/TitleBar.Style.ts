@@ -7,6 +7,7 @@ export const TitleContainer = styled.div`
     width: 85%;
     display: flex;
     justify-content: center;
+    text-align: center;
 `;
 
 export const TitleText = styled.h1`
@@ -28,5 +29,13 @@ export const TitleText = styled.h1`
         transition: all 0.5s;
         background: white;
         color: crimson;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 2em;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.5em;
     }
 `;
