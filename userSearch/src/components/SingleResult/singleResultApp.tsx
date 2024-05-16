@@ -1,5 +1,5 @@
 import { TargetUser } from "../../tools/Interfaces";
-import { useSingleResult } from "./useSingleResult";
+import { useSingleResult } from "./UseSingleResult";
 import { ResultContainer, ImgDiv, UserLogin, StyledLink, Highlight } from "./SingleResult.Styles";
 
 export const SingleResult = ({ targetUser }: { targetUser: TargetUser }) => {

@@ -4,13 +4,17 @@ import { UseDebounce } from '../../tools/UseDebounce';
 import { User } from '../../tools/Interfaces';
 import { FetchUsers } from '../../tools/FetchUsers';
 
+// QueryContext is used to share the search query across components
 export const QueryContext = createContext('');
 
 export const useUserSearch = () => {
     const [query, setQuery] = useState<string>("");
     const [UserData, setUserData] = useState<User[]>([]);
     const [error, setError] = useState<string | null>(null);
+
+    // Debouncing is used to limit the rate of API calls
     const debouncedQuery = UseDebounce(query, 500);
+
     const URL = `https://api.github.com/search/users?q=${debouncedQuery}&per_page=25`;
 
     const {
@@ -23,6 +27,7 @@ export const useUserSearch = () => {
         retry: 1,
     });
 
+    // Updating the state based on the API response
     useEffect(() => {
         if (data) {
             const res = data.items;
