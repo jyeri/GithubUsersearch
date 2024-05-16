@@ -1,10 +1,10 @@
-import { Title__Container , Title__Text } from "./TitleBar.Style.ts"
+import { TitleContainer , TitleText } from "./TitleBar.Style.ts"
 
 export const TitleBar = () => {
     return (
-        <Title__Container>
-            <Title__Text>Github people finder</ Title__Text>
-        </Title__Container>
+        <TitleContainer>
+            <TitleText>Github people finder</ TitleText>
+        </TitleContainer>
     );
 };
 

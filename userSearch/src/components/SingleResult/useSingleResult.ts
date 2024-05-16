@@ -1,17 +1,25 @@
-import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { fetchUsers } from "../../tools/fetchUsers";
-import { targetUser } from "../../tools/interfaces";
+import { useContext } from 'react';
+import { QueryContext } from '../UserSearch/useUserSearch';
+import { user } from "../../tools/interfaces"; // import the User interface
 
-export const useSingleResult = ({myUser}: targetUser) => {
-    const { data, isLoading, isError } = useQuery(['user', myUser.login], () => fetchUsers(`https://api.github.com/users/${myUser.login}`));
-    const [targetUser, setTargetUser] = useState<targetUser | null>(null);
+export function useSingleResult({ targetUser }: { targetUser: user }) {
+  const query = useContext(QueryContext);
+  const regex = new RegExp(`(${query})`, 'i');
+  const match = targetUser.login.match(regex);
 
-    useEffect(() => {
-        if(data){
-            setTargetUser(data.find((user: targetUser) => user.login === myUser.login));
-        }
-    }, [data, myUser.login]);
+  let beforeMatch = '';
+  let matchedText = '';
+  let afterMatch = '';
 
-    return { targetUser, isLoading, isError };
-};
+  if (match) {
+    const matchIndex = match.index || 0;
+    matchedText = match[0];
+    beforeMatch = targetUser.login.slice(0, matchIndex);
+    afterMatch = targetUser.login.slice(matchIndex + matchedText.length);
+  }
+  else {
+    beforeMatch = targetUser.login;
+  }
+
+  return { beforeMatch, matchedText, afterMatch };
+}

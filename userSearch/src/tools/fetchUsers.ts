@@ -7,9 +7,9 @@ export const fetchUsers = async (url: string) => {
       if(response.status == 404){
         console.log("Not Found");
       }
-      throw new Error(`Error fetching users: ${response.status}`);
+      throw new Error(`Error fetching users: ${response.status}, try again later.`);
     }
     const data = await response.json();
-    
+    console.log("IM TRYING TO FETCH DATA");
     return data;
   };

@@ -104,18 +104,22 @@ export const SearchBar = styled.input`
 
 export const ResultContainer = styled.div`
   position: relative;
-  border: 1px solid crimson;
+  display: flex;
+  flex-direction: column;
+  height: 60vw;
+  width: 75vw;
+  max-height: 70vh;
+  max-width: 80vh;
   margin: auto;
   top: 50px;
-  width: 75%;
   padding: 2px;
-  overflow-y: scroll;
+  overflow-y: auto;
     `;
 
 export const ParentContainer = styled.div`
     padding: 2px;
     position: relative;
     width: 100%;
-    margin-top: 50px; // Adjust this value as needed
+    margin-top: 50px;
 `;
 

@@ -63,5 +63,12 @@ export const UserLogin = styled.div`
         background: white;
         color: crimson;
     }
-    }
+`;
+
+export const Highlight = styled.span`
+    color: darkred;
+    font-size: 1em;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 `;

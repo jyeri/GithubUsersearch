@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Title__Container = styled.div`
+export const TitleContainer = styled.div`
     margin: auto;
     position: relative;
     margin-top: 2em;
@@ -9,7 +9,7 @@ export const Title__Container = styled.div`
     justify-content: center;
 `;
 
-export const Title__Text = styled.h1`
+export const TitleText = styled.h1`
     background: crimson;
     position: relative;
     font-size: 3em;
@@ -22,11 +22,11 @@ export const Title__Text = styled.h1`
     box-shadow: 0 0 25px 0 crimson,
                 0 20px 25px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s;
-
-&:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: all 0.5s;
-    background: white;
-    color: crimson;
-}`;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all 0.5s;
+        background: white;
+        color: crimson;
+    }
+`;
