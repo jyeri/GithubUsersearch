@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  max-height: 100vw;
+  max-height: 100vh;
   max-width: 100vw;
   box-sizing: border-box;
   font-family: "Madimi One", sans-serif;
@@ -10,13 +10,13 @@
  
 }
 html, body {
-  height: 100vw;
+  height: 100vh;
 }
 
 body {
   display: table;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   background-color: #4d4d4d;
   position: relative;
   font-family: sans-serif;
