@@ -1,8 +1,8 @@
 import { useEffect, useState, createContext } from 'react';
 import { useQuery } from "@tanstack/react-query";
-import { useDebounce } from '../../tools/UseDebounce';
+import { UseDebounce } from '../../tools/UseDebounce';
 import { User } from '../../tools/Interfaces';
-import { fetchUsers } from '../../tools/FetchUsers';
+import { FetchUsers } from '../../tools/FetchUsers';
 
 export const QueryContext = createContext('');
 
@@ -10,7 +10,7 @@ export const useUserSearch = () => {
     const [query, setQuery] = useState<string>("");
     const [UserData, setUserData] = useState<User[]>([]);
     const [error, setError] = useState<string | null>(null);
-    const debouncedQuery = useDebounce(query, 500);
+    const debouncedQuery = UseDebounce(query, 500);
     const URL = `https://api.github.com/search/users?q=${debouncedQuery}&per_page=25`;
 
     const {
@@ -18,7 +18,7 @@ export const useUserSearch = () => {
         error: queryError,
     } = useQuery({
         queryKey: ['users', debouncedQuery],
-        queryFn: () => fetchUsers(URL),
+        queryFn: () => FetchUsers(URL),
         enabled: !!debouncedQuery,
         retry: 1,
     });

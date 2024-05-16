@@ -1,4 +1,4 @@
-export const fetchUsers = async (url: string) => {
+export const FetchUsers = async (url: string) => {
   const response = await fetch(url);
   if (!response.ok) {
     let errorMessage = '';
