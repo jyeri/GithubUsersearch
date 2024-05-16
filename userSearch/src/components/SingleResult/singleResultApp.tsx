@@ -1,11 +1,10 @@
-import { TargetUser } from "../../tools/interfaces";
+import { TargetUser } from "../../tools/Interfaces";
 import { useSingleResult } from "./useSingleResult";
-import { ResultContainer, ImgDiv, UserLogin, StyledLink, Highlight } from "./singleResult.styles";
+import { ResultContainer, ImgDiv, UserLogin, StyledLink, Highlight } from "./SingleResult.Styles";
 
 export const SingleResult = ({ targetUser }: { targetUser: TargetUser }) => {
     const { beforeMatch, matchedText, afterMatch } = useSingleResult({ targetUser });
     return(
-      <>
         <ResultContainer>
           <StyledLink href={targetUser.html_url}>
           <ImgDiv>
@@ -20,6 +19,5 @@ export const SingleResult = ({ targetUser }: { targetUser: TargetUser }) => {
           </UserLogin>
           </StyledLink>
         </ResultContainer>
-      </>
     );
 };

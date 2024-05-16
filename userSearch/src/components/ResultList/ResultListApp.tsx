@@ -1,12 +1,11 @@
-import { SearchResultProps } from '../../tools/interfaces';
-import { ResultContainer } from '../UserSearch/userSearch.styles';
-import { SingleResult } from '../SingleResult/singleResultApp';
-import { Suggestion } from './SearchResult.styles';
+import { SearchResultProps } from '../../tools/Interfaces';
+import { ResultContainer } from '../UserSearch/UserSearch.Styles';
+import { SingleResult } from '../SingleResult/SingleResultApp';
+import { Suggestion } from './ResultList.Styles';
 
-export const SearchResult = ({visible, UserData}: SearchResultProps) => {
+export const SearchResult = ({Visible, UserData}: SearchResultProps) => {
 
-    return visible ? (
-    <>
+    return Visible ? (
         <ResultContainer>
         {
             UserData && UserData.length > 0 ? (
@@ -18,6 +17,5 @@ export const SearchResult = ({visible, UserData}: SearchResultProps) => {
                 )
         }
         </ResultContainer>
-    </>
     ) : null;
 };

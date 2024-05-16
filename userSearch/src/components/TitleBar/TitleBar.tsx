@@ -7,5 +7,3 @@ export const TitleBar = () => {
         </TitleContainer>
     );
 };
-
-export default TitleBar;
