@@ -1,5 +1,5 @@
-import { TitleBar } from './components/TitleBar/TitleBar'
-import { UserSearch } from './components/UserSearch/UserSearchApp'
+import { TitleBar } from './components/TitleBar/TitleBar';
+import { UserSearch } from './components/UserSearch/UserSearchApp';
 import './App.css'
 
 function App() {
