@@ -130,7 +130,6 @@ export const ResultContainer = styled.div`
 export const ParentContainer = styled.div`
     padding: 0.4em;
     position: relative;
-    border: 1px solid crimson;
     width: 100%;
     margin-top: 0.4em;
     @media (max-width: 768px) {
@@ -144,4 +143,3 @@ export const ParentContainer = styled.div`
       }
 
 `;
-
