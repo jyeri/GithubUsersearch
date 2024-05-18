@@ -1,14 +1,15 @@
 .result-list {
     position: relative;
     display: flex;
-    flex-direction: column;
+    align-self: flex-start;
+    flex-flow: column nowrap;
     height: 60vh;
     width: 75vw;
     max-height: 80vh;
     max-width: 80vw;
     margin: auto;
     padding: 0.1em;
-    padding-bottom: 0.2em;
+    padding-bottom: 0.5em;
     overflow-y: auto;
   
     &::-webkit-scrollbar {

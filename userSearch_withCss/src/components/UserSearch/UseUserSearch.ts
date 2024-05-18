@@ -15,7 +15,7 @@ export const useUserSearch = () => {
     // Debouncing is used to limit the rate of API calls
     const debouncedQuery = UseDebounce(query, 500);
 
-    const URL = `https://api.github.com/search/users?q=${debouncedQuery}&per_page=25`;
+    const URL = `https://api.github.com/search/users?q=${debouncedQuery}&per_page=15`;
 
     const {
         data,

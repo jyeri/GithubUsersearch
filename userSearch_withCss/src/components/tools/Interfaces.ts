@@ -1,11 +1,18 @@
-export interface   User {  // Define the User interface
+export interface User { // Define the User interface
     login: string;
-    id:number; 
-    avatar_url:string;
-    html_url:string;
+    id: number;
+    avatar_url: string;
+    html_url: string;
+    node_id: string;
+    followers: number | null;
+    following: number | null;
+    email: string | null;
+    name: string | null;
+    created_at: string | null;
+    updated_at: string | null;
 }
 
-export type TargetUser = User; // Define the TargetUser type
+export type TargetUser = User; // Define the TargetUser type, not needed, but it helps to understand what are we working with
 
 export type ErrorData = { // Define the ErrorData type
     happened: boolean | false;
