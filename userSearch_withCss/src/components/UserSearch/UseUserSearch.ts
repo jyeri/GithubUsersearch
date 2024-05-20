@@ -4,8 +4,9 @@ import { UseDebounce } from '../tools/UseDebounce';
 import { User } from '../tools/Interfaces';
 import { FetchUsers } from '../tools/FetchUsers';
 
-// QueryContext is used to share the search query across components
-export const QueryContext = createContext('');
+// Create a context for the UserData
+export const UserSearchContext = createContext<{ UserData: User[], query: string }>({ UserData: [], query: '' });
+
 
 export const useUserSearch = () => {
     const [query, setQuery] = useState<string>("");
@@ -17,29 +18,26 @@ export const useUserSearch = () => {
 
     const URL = `https://api.github.com/search/users?q=${debouncedQuery}&per_page=15`;
 
-    const {
-        data,
-        error: queryError,
-    } = useQuery({
+    // This doesn't create an unnamed const, but rather two named consts: apiResponse and queryError.
+    const { data: apiResponse, error: queryError } = useQuery<{ data?: { items: User[] }, error?: string }, Error>({
         queryKey: ['users', debouncedQuery],
-        queryFn: () => FetchUsers(URL),
+        queryFn: () => FetchUsers<{ items: User[] }>(URL),
         enabled: !!debouncedQuery,
         retry: 1,
-    });
-
-    // Updating the state based on the API response
-    useEffect(() => {
-        if (data) {
-            const res = data.items;
-            const filteredRes = res.filter((item: User) => 
-                item.login.toLowerCase().includes(debouncedQuery.toLowerCase()));
-            setUserData(filteredRes);
-            setError(null);
+        staleTime: 1000 * 60,
+      });
+      
+      useEffect(() => {
+        if (apiResponse?.data?.items) {
+          const filteredRes = apiResponse.data.items.filter((item: User) => 
+            item.login.toLowerCase().includes(debouncedQuery.toLowerCase()));
+          setUserData(filteredRes);
+          setError(null);
         }
-        else if (queryError) {
-            setError(queryError.message);
+        else if (apiResponse?.error || queryError) {
+          setError(apiResponse?.error || queryError?.message || null);
         }
-    }, [data, debouncedQuery, queryError]);
+      }, [apiResponse, debouncedQuery, queryError]);
 
     const handleInputChange = (e: { target: { value: string; }; }) => {
         setQuery(e.target.value);

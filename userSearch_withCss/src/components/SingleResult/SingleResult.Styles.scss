@@ -1,12 +1,8 @@
 .single-result {
     display: flex;
     flex-direction: row;
-    width: 50%;
-    height: 20%;
-    margin-top: 200px;
-    padding: 3%;
-    margin: auto;
-    gap: 20px;
+    flex-wrap: wrap;
+    padding: 2%;
     @media (max-width: 768px) {
         transform: scale(0.9);
       }

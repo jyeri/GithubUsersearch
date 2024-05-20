@@ -1,14 +1,12 @@
 import { useContext, useMemo } from 'react';
-import { QueryContext } from '../UserSearch/UseUserSearch';
+import { UserSearchContext } from '../UserSearch/UseUserSearch';
 import { User } from "../tools/Interfaces";
 
-// This hook is used to find and separate the parts of a user's login that match a search query.
 export function useSingleResult({ targetUser }: { targetUser: User }) {
-  const query = useContext(QueryContext);
+  const context = useContext(UserSearchContext);
+  const query = context.query;
 
-  // We use a case-insensitive regex to find matches in the user's login
   const regex = useMemo(() => new RegExp(`(${query})`, 'i'), [query]);
-
   const match = useMemo(() => regex.exec(targetUser.login), [regex, targetUser.login]);
 
   let beforeMatch = '';
