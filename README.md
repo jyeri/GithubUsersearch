@@ -41,6 +41,10 @@ Bootstrapped still with vite, and deployement vercel.
 10. UseFetchError.ts - Logic part of FetchError.
     - Simple hook to set cooldown, after cooldown retryAvailable boolean return true and App can display the button.
 
+## Repository set-up
+
+
+
 
 
 ##  Upgrades for the future
@@ -74,33 +78,38 @@ Bootstrapped still with vite, and deployement vercel.
 
 ## Checklist of improvements:
 
-1. CSS - use BEM or Styled components. DONE
+[x] CSS - use BEM or Styled components.
     - All styling just one level deep, saves a lot of time knowing what is always modified.
 
-2. Typescript - its major upgrade from Javascript DONE
+[x] Typescript - its major upgrade from Javascript
 
-3. Testing - use Cypress or equilevant
+[x] Testing - use Cypress or equilevant
     - Easy start point to make developing easier in future.
+    - Cypress setup, E2E config, 20 tests done. More to come.
 
-4. Use storybook - always when developing dumb components DONE-ISH
+[ ] Use storybook - always when developing dumb components DONE-ISH
     - https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/
     - already ready to go for this project
     - Runs alongside with dev
     - Use bit more time to get to know how to utilize storybook
 
-5. Separate components into 3 pieces DONE
+[x] Separate components into 3 pieces
     - useFunc -> useComponent.ts
         - contains all the logic
 
     - ViewFunc -> componentView.tsx
-        - dumb component that simply takes in props and has no logic.
+        - dumb component that simply takes in props and has no logic, just renders the parts.
 
     - AppFile -> ComponentApp.tsx
         - will have useComponent.ts file, and pass the props to View file
 
-6. Keep everything possible in complete isolation DONE
+[x] Keep everything possible in complete isolation
     - No prop drilling, let react do its job with query from react etc.
+        - Ended up mixing a bit, mostly context used instead of props.
+        - Error message as exeption since I wanted to keep it as reusable as possible.
     - INSTEAD OF OLD REACT QUERY GO WITH TANSTACK
+
+# PRE START PLANNING BELOW
 
 ## Repo plan
 
