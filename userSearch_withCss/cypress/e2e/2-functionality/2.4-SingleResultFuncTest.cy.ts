@@ -1,6 +1,3 @@
-import { should } from "chai"
-import { realHover } from "cypress-real-events/commands/realHover"
-
 describe('SingleResult is correctly formatted and functional', () => {
     it('Highlight, enlarges on hover', () => {
       cy.visit('http://localhost:5173/')
