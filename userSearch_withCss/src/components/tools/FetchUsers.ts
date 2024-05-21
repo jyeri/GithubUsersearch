@@ -17,7 +17,7 @@ export const FetchUsers = async <T>(url: string): Promise<{ data?: T, error?: st
     // If an error is caught, it could be due to network issues or the custom error we threw
     // We log the error and re-throw it to be handled by the calling code
     console.error('There was an error!', error);
-    return { error: error.message };
+    return { error: (error as Error).message };
   }
 };
 
