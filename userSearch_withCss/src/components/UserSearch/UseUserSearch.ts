@@ -37,7 +37,7 @@ export const useUserSearch = () => {
         setError(null);
       }
       else if (apiResponse?.error || queryError) {
-        setError(apiResponse?.error || queryError?.message || null);
+        setError(apiResponse?.error || queryError?.message || null);
       }
     }, [apiResponse, debouncedQuery, queryError]);
 
