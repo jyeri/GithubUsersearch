@@ -1,26 +1,3 @@
-// FetchUsers is a utility function to fetch data from a given URL
-export const FetchUsers = async <T>(url: string): Promise<{ data?: T, error?: string }> => {
-  try {
-    // Attempt to fetch data from the provided URL
-    const response = await fetch(url);
-
-    // If the response is not ok (status is not in the range 200-299), 
-    // we want to throw an error with a custom message
-    if (!response.ok) {
-      return { error: generateErrorMessage(response.status) };
-    }
-
-    // If the response is ok, parse it as JSON and return the data
-    const data = await response.json();
-    return { data };
-  } catch (error) {
-    // If an error is caught, it could be due to network issues or the custom error we threw
-    // We log the error and re-throw it to be handled by the calling code
-    console.error('There was an error!', error);
-    return { error: (error as Error).message };
-  }
-};
-
 // This function generates a custom error message based on the HTTP status code
 function generateErrorMessage(status: number): string {
   switch(status) {
@@ -32,3 +9,23 @@ function generateErrorMessage(status: number): string {
       return 'An error occurred';
   }
 }
+
+// FetchUsers is a utility function to fetch data from a given URL
+export const FetchUsers = async <T>(url: string): Promise<{ data?: T, error?: string }> => {
+  try {
+    const response = await fetch(url);
+
+    // If the response is not ok, generate a custom error message
+    if (!response.ok) {
+      return { error: generateErrorMessage(response.status) };
+    }
+
+    // If the response is ok, parse it as JSON and return the data
+    const data = await response.json();
+    return { data };
+  } catch (error) {
+    // Log and return any caught errors
+    console.error('There was an error!', error);
+    return { error: (error as Error).message };
+  }
+};

@@ -1,4 +1,5 @@
-export interface User { // Define the User interface
+// Define the User interface
+export interface User {
     login: string;
     id: number;
     avatar_url: string;
@@ -12,21 +13,25 @@ export interface User { // Define the User interface
     updated_at: string | null;
 }
 
-export type TargetUser = User; // Define the TargetUser type, not needed, but it helps to understand what are we working with
-
-export type ErrorData = { // Define the ErrorData type
-    happened: boolean | false;
-    errormsg: string | null;
-}
-
-export interface   SearchResultProps {  // Define the SearchResultProps interface
+// Define the SearchResultProps interface
+export interface SearchResultProps {
     UserData: User[] | null;
     Visible: boolean; 
 }
 
-export interface ApiResponse { // Define the ApiResponse interface for fetched data and error handling
+// Define the ApiResponse interface for fetched data and error handling
+export interface ApiResponse {
     data: {
       items: User[];
     };
     error: string;
-  }
+}
+
+// Define the TargetUser type
+export type TargetUser = User;
+
+// Define the ErrorData type
+export type ErrorData = {
+    happened: boolean | false;
+    errormsg: string | null;
+}

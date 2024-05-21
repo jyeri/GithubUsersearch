@@ -3,7 +3,9 @@ import { useSingleResult } from "./UseSingleResult";
 import "./SingleResult.Styles.scss";
 
 export const SingleResult = ({ targetUser }: { targetUser: TargetUser }) => {
+    // useSingleResult hook provides the functionality to highlight the matched text in the username
     const { beforeMatch, matchedText, afterMatch } = useSingleResult({ targetUser });
+
     return(
         <div className="single-result" data-testid="cypress-resultElem" data-testidunique={`${targetUser.login}-element`}>
           <a className="single-result__link" data-testidunique={`${targetUser.login}-link`} href={targetUser.html_url} target="_blank" rel="noopener noreferrer">
@@ -12,6 +14,7 @@ export const SingleResult = ({ targetUser }: { targetUser: TargetUser }) => {
             </div>
             <div className="single-result__username" data-testidunique={`${targetUser.login}-username-container`}>
               <h1 className="single-result__username" data-testidunique={`${targetUser.login}-username-text`}>
+                {/* Highlight the matched text in the username */}
                 {beforeMatch}<span className="single-result__username--highlight">{matchedText}</span>{afterMatch}
               </h1>
             </div>

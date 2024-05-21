@@ -1,10 +1,9 @@
 import './FetchError.Styles.scss';
 import { useFetchError } from './UseFetchError';
 
-// This component displays an error message and a button to refresh the page
-// Its done purely in learning purposes, in a real-world scenario, you would want to handle errors more gracefully, like re fetching the data and displaying a message to the user
-// This renders buttons to refresh the page if the countdown is 0 and retryAvailable is true
-
+// FetchError component displays an error message and a button to refresh the page
+// It renders a button to refresh the page if the countdown is 0 and retryAvailable is true
+// This is done just to practice, it is no way best way to handle errors, and it is not recommended to refresh the page on error
 export const FetchError = ({error_msg}: {error_msg: string}) => {
     const { countdown, retryAvailable } = useFetchError();
 
@@ -14,7 +13,7 @@ export const FetchError = ({error_msg}: {error_msg: string}) => {
             {countdown > 0 ? (
                 <h1>Refresh button available in {countdown} seconds</h1>
             ) : (
-                retryAvailable && <button className='error__button' onClick={() => window.location.reload()}>Refresh </button>
+                retryAvailable && <button className='error__button' aria-label='refresh' onClick={() => window.location.reload()}>Refresh </button>
             )}
         </div>
     );
