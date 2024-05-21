@@ -13,6 +13,8 @@ Second try to make flush usersearch from github api
 This time done with typescript + react.
 Bootstrapped still with vite, and deployement vercel.
 
+![Repoplans](order.drawio.svg)
+
 
 ## Files, whats & whys - 1by1
 
@@ -42,7 +44,7 @@ Bootstrapped still with vite, and deployement vercel.
     - Simple hook to set cooldown, after cooldown retryAvailable boolean return true and App can display the button.
 
 ## Repository set-up
-
+![Repoplans](Repository_plan.drawio.svg)
 
 
 
