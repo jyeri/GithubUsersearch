@@ -10,7 +10,7 @@ export const UserSearch = () => {
         <UserSearchContext.Provider value={{ UserData, query }}>
             <div className='search'>
                 <div className='search__container'>
-                    <input className='search__input' id='1' value={query} onChange={handleInputChange} placeholder='Try searching for Jyeri'/>
+                    <input data-testid="cypress-input" className='search__input' id={query} value={query} onChange={handleInputChange} placeholder='Try searching for Jyeri'/>
                 </div>
                 {error ? <FetchError error_msg={error}></FetchError> : <SearchResult />}
             </ div>
