@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
-import { UserSearchContext } from '../UserSearch/UseUserSearch';
-import { User } from "../tools/Interfaces";
+import { UserSearchContext } from '../../Providers/QueryContextProvider';
+import { User } from "../../Interfaces/Interfaces";
 
 export function useSingleResult({ targetUser }: { targetUser: User }) {
   // Access the search query from the UserSearchContext

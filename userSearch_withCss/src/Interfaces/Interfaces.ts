@@ -14,9 +14,8 @@ export interface User {
 }
 
 // Define the SearchResultProps interface
-export interface SearchResultProps {
+export interface UserData {
     UserData: User[] | null;
-    Visible: boolean; 
 }
 
 // Define the ApiResponse interface for fetched data and error handling
