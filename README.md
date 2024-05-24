@@ -13,6 +13,14 @@ Second try to make flush usersearch from github api
 This time done with typescript + react.
 Bootstrapped still with vite, and deployement vercel.
 
+## Current object
+
+[x] Components are now divided into three files + styles.
+[x] Repository is now pretty much constructed as I want it to be
+[x] UserInput is separate component from Results, only way they communicate is using useContext to pass query and inputchange. it can be consumed then inside the Provider.
+[ ] I am still not happy how ResultList is created already on top of the tree, it could happen later when it is actually used for viewing.
+[ ] Operations tree could be even flatter, there is no need to go over multiple containers just to print the results, so I'll think about do a little combining of components if I manage to do it in the way that its still easy to read and doesn't break good habits.
+
 ## Current working version is userSearch_withCss
 
 ![Repoplans](order.drawio.svg)
