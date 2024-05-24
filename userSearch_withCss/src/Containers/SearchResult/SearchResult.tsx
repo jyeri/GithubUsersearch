@@ -1,11 +1,15 @@
 import { useContext } from 'react';
-import { UserData } from '../../Interfaces/Interfaces.ts'; // Import UserData
+import { User } from '../../Interfaces/Interfaces.ts'; // Import UserData
 import { UserSearchContext } from '../../Providers/QueryContextProvider'; // Import UserSearchContext from QueryContextProvider
 import { SingleResult } from '../SingleResult/SingleResult.tsx';
 import { SuggestionView } from '../../Presentational/SuggestionView.tsx';
 import { ResultListView } from '../../Presentational/ResultListView.tsx';
 
-export const SearchResult = ({UserData}:UserData) => {
+interface ISearchResultProps {
+    UserData: User[];
+}
+
+export const SearchResult: React.FunctionComponent<ISearchResultProps> = ({ UserData }) => {
     // Use the UserSearchContext to access the search query
     const { query } = useContext(UserSearchContext);
 

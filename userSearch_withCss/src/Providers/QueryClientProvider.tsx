@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 interface ClientProviderProps {
@@ -6,8 +6,8 @@ interface ClientProviderProps {
 }
 
 export const ClientProvider: React.FC<ClientProviderProps> = ({ children }) => {
-  // Create a new instance of QueryClient
-  const queryClient = new QueryClient();
+  // Create a new instance of QueryClient only once
+  const [queryClient] = useState(() => new QueryClient());
 
   return (
     <QueryClientProvider client={queryClient}>

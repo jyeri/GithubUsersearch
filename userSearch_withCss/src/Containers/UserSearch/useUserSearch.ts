@@ -24,7 +24,7 @@ export const useUserSearch = () => {
     });
 
   useEffect(() => {
-    if (apiResponse?.data?.items) {
+    if (debouncedQuery && apiResponse?.data?.items) {
       const filteredRes = apiResponse.data.items.filter((item: User) => 
         item.login.toLowerCase().includes(debouncedQuery.toLowerCase()));
       setUserData(filteredRes);
